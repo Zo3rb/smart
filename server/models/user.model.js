@@ -70,6 +70,14 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING(255),
         defaultValue: "/uploads/profiles/default-profile.png",
       },
+      reset_password_token: {
+        type: DataTypes.STRING(255),
+        allowNull: true,
+      },
+      reset_password_expires: {
+        type: DataTypes.DATE,
+        allowNull: true,
+      },
       created_at: {
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW,

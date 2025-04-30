@@ -2,6 +2,7 @@ const swaggerUi = require("swagger-ui-express");
 const swaggerSpec = require("./swagger");
 
 // Import all documentation files to ensure they're included
+require("./routes/auth.routes");
 require("./routes/healthCheck.routes");
 require("./components/response.component");
 

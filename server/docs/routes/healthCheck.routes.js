@@ -7,7 +7,7 @@
 
 /**
  * @swagger
- * /health:
+ * /api/health:
  *   get:
  *     summary: Check API health status
  *     description: Returns the current status of the API and system information

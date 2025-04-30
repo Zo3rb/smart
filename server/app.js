@@ -12,7 +12,7 @@ const rateLimiter = require("./middleware/rateLimiter");
 const setupSwagger = require("./docs");
 
 // Importing routes
-const { healthRoutes } = require("./routes");
+const { healthRoutes, authRoutes } = require("./routes");
 
 // Initialize Express app
 const app = express();
@@ -48,6 +48,7 @@ if (process.env.NODE_ENV !== "production") {
 
 // Routes
 app.use("/api/health", healthRoutes);
+app.use("/api/auth", authRoutes);
 
 app.use("/api", (req, res, next) => {
   if (req.originalUrl.startsWith("/api") && req.originalUrl !== "/api/health") {
