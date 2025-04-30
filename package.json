@@ -40,7 +40,8 @@
     "db:reset": "NODE_ENV=development node -e \"require('./server/utils/dbInit').initializeDatabase(true)\"",
     "db:create": "sequelize-cli db:create",
     "db:drop": "sequelize-cli db:drop",
-    "db": "node server/utils/dbCli.js"
+    "db": "node server/utils/dbCli.js",
+    "test:email": "NODE_ENV=development node server/utils/testEmailService.js"
   },
   "keywords": [],
   "author": "Ali Abu-elfottoh -> ALX Software Club",
