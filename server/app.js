@@ -9,6 +9,7 @@ const logger = require("./utils/logger");
 const errorHandler = require("./middleware/errorHandler");
 const AppError = require("./utils/AppError");
 const rateLimiter = require("./middleware/rateLimiter");
+const setupSwagger = require("./docs");
 
 // Importing routes
 const { healthRoutes } = require("./routes");
@@ -39,6 +40,11 @@ app.use((req, res, next) => {
   });
   next();
 });
+
+// Setup Swagger documentation (only in development)
+if (process.env.NODE_ENV !== "production") {
+  setupSwagger(app); // Add this line
+}
 
 // Routes
 app.use("/api/health", healthRoutes);

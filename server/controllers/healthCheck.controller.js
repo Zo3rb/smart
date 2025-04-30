@@ -1,6 +1,9 @@
 const os = require("os");
 
-// Get system information
+/**
+ * Get detailed system information for health check
+ * @returns {Object} System information including uptime, memory usage, CPU details, etc.
+ */
 const getSystemInfo = () => {
   const uptimeInSeconds = process.uptime();
   const uptimeFormatted = {
@@ -28,7 +31,13 @@ const getSystemInfo = () => {
   };
 };
 
-// Health check controller
+/**
+ * Health check controller
+ * Returns API status and system information
+ *
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ */
 exports.getHealthStatus = (req, res) => {
   res.status(200).json({
     status: "success",
